@@ -1,15 +1,7 @@
 """
 The template of the main script of the machine learning process
 """
-
-
-def count(self, point):
-    if point > 200:
-        return 400 - point
-    elif point < 0:
-        return (-1) * point
-    else:
-        return point
+import random
 
 
 class MLPlay:
@@ -18,6 +10,10 @@ class MLPlay:
         Constructor
         """
         self.ball_served = False
+        self.last_x = 0
+        self.last_y = 0
+        self.predict_X = 0
+        self.predict_Y = 0
 
     def update(self, scene_info):
         """
@@ -33,41 +29,44 @@ class MLPlay:
             command = "SERVE_TO_LEFT"
 
         else:
-            x = scene_info["ball"][0]
-            y = 400 - scene_info["ball"][1]
-            point1 = x + y
-            point2 = x - y
-            if point1 > 200:
-                point1 = 400 - point1
-            elif point1 < 0:
-                point1 = (-1) * point1
-
-            if point2 > 200:
-                point2 = 400 - point2
-            elif point2 < 0:
-                point2 = (-1) * point2
-
-            mx = scene_info["platform"][0] - scene_info["ball"][0]
-            my = scene_info["platform"][1] - scene_info["ball"][1]
-            if mx == 0:
-                m = 0
-            else:
-                m = my / mx
-
-            if (m < 10) and (m > -10):
-                if scene_info["ball"][0] > scene_info["platform"][0]:
-                    if point1 > scene_info["ball"][0]:
-                        command = "MOVE_RIGHT"
-                    else:
-                        command = "MOVE_LEFT"
+            mx = scene_info["ball"][0] - self.last_x # mx > 0 RIGHT
+            my = scene_info["ball"][1] - self.last_y # my > 0 DOWN
+            m = my / mx
+            if mx > 0 and my > 0:  # RIGHT_DOWN
+                self.predict_Y = 400 - scene_info["ball"][1]
+                self.predict_X = scene_info["ball"][0] + self.predict_Y / m
+                self.predict_X = int(self.predict_X)
+                xxx = self.predict_X // 200
+                if xxx % 2 == 1:
+                    self.predict_X = 200 - self.predict_X % 200
                 else:
-                    if point2 > scene_info["ball"][0]:
-                        command = "MOVE_RIGHT"
-                    else:
-                        command = "MOVE_LEFT"
+                    self.predict_X = self.predict_X % 200
+            elif mx < 0 and my > 0:  # LEFT_DOWN
+                self.predict_Y = 400 - scene_info["ball"][1]
+                self.predict_X = scene_info["ball"][0] + self.predict_Y / m
+                self.predict_X = (-1)*self.predict_X
+                self.predict_X = int(self.predict_X)
+                xxx = self.predict_X // 200
+                if xxx % 2 == 1:
+                    self.predict_X = 200 - self.predict_X % 200
+                else:
+                    self.predict_X = self.predict_X % 200
+            elif mx > 0 and my < 0:  # RIGHT_UP
+                command = "MOVE_RIGHT"
+            elif mx < 0 and my < 0:  # LEFT_UP
+                command = "MOVE_LEFT"
+            if scene_info["platform"][0] < (self.predict_X - 20 + random.randint(0, 10)) and my > 0:
+                command = "MOVE_RIGHT"
+            elif scene_info["platform"][0] > (self.predict_X - 20 + random.randint(0, 10)) and my > 0:
+                command = "MOVE_LEFT"
             else:
-                print(m)
-                command = ""
+                command = "NONE"
+
+            print(scene_info["bricks"])
+            print(scene_info["hard_bricks"])
+            self.last_x = scene_info["ball"][0]
+            self.last_y = scene_info["ball"][1]
+
         return command
 
     def reset(self):
