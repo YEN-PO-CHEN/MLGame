@@ -1,2 +1,2 @@
 all:
-	python MLGame.py -r -i ml_play_template.py arkanoid NORMAL 5
+	python MLGame.py -i model_DJ.py -f 200 -r arkanoid EASY 3
