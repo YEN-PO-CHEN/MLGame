@@ -26,10 +26,8 @@ class MLPlay:
 
         if not self.ball_served:
             self.ball_served = True
-            if random.randint(0, 3) == 1:
-                command = "SERVE_TO_LEFT"
-            else:
-                command = "SERVE_TO_RIGHT"
+            command = "SERVE_TO_LEFT"
+
         else:
             command = "NONE"
             mx = scene_info["ball"][0] - self.last_x  # mx > 0 RIGHT
@@ -45,9 +43,9 @@ class MLPlay:
                 else:
                     self.predict_X = self.predict_X % 200
                 self.predict_X = self.predict_X + random.randint(-5, 5)
-                if scene_info["platform"][0] < (self.predict_X - 20 + random.randint(0, 10)) and my > 0:
+                if scene_info["platform"][0] < (self.predict_X - 25) and my > 0:
                     command = "MOVE_RIGHT"
-                elif scene_info["platform"][0] > (self.predict_X - 20 + random.randint(0, 10)) and my > 0:
+                elif scene_info["platform"][0] > (self.predict_X - 15) and my > 0:
                     command = "MOVE_LEFT"
                 else:
                     command = "NONE"
@@ -62,31 +60,37 @@ class MLPlay:
                 else:
                     self.predict_X = self.predict_X % 200
                 self.predict_X = self.predict_X + random.randint(-5, 5)
-                if scene_info["platform"][0] < (self.predict_X - 20 + random.randint(0, 10)) and my > 0:
+                if scene_info["platform"][0] < (self.predict_X - 25) and my > 0:
                     command = "MOVE_RIGHT"
-                elif scene_info["platform"][0] > (self.predict_X - 20 + random.randint(0, 10)) and my > 0:
+                elif scene_info["platform"][0] > (self.predict_X - 15) and my > 0:
                     command = "MOVE_LEFT"
                 else:
                     command = "NONE"
-            elif mx > 0 and my < 0:  # RIGHT_UP
-                if scene_info["ball"][1] > 200:
-                    command = "MOVE_RIGHT"
-                elif scene_info["platform"][0] > 80:
-                    command = "MOVE_LEFT"
-                elif scene_info["platform"][0] < 80:
-                    command = "MOVE_RIGHT"
-                else:
-                    command = "NONE"
-            elif mx < 0 and my < 0:  # LEFT_UP
-                if scene_info["ball"][1] > 200:
-                    command = "MOVE_LEFT"
-                elif scene_info["platform"][0] > 80:
-                    command = "MOVE_LEFT"
-                elif scene_info["platform"][0] < 80:
-                    command = "MOVE_RIGHT"
-                else:
-                    command = "NONE"
+            else:
+                command = "NONE"
+                ##     ## mx > 0 and my < 0:  # RIGHT_UP
+                ## if scene_info["ball"][1] > 200:
+                ##     command = "MOVE_RIGHT"
+                ## elif scene_info["platform"][0] > 80:
+                ##     command = "MOVE_LEFT"
+                ## elif scene_info["platform"][0] < 80:
+                ##     command = "MOVE_RIGHT"
+                ## else:
+                ##     command = "NONE"
+                ## elif mx < 0 and my < 0:  # LEFT_UP
+                ##     if scene_info["ball"][1] > 200:
+                ##         command = "MOVE_LEFT"
+                ##     elif scene_info["platform"][0] > 80:
+                ##         command = "MOVE_LEFT"
+                ##     elif scene_info["platform"][0] < 80:
+                ##         command = "MOVE_RIGHT"
+                ##     else:
+                ##         command = "NONE"
 
+            if scene_info["platform"][1] - scene_info["ball"][1] < 10:
+                command = "NONE"
+            if scene_info["ball"][1] < 160:
+                command = "NONE"
             self.last_x = scene_info["ball"][0]
             self.last_y = scene_info["ball"][1]
 

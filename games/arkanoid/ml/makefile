@@ -1,0 +1,1 @@
+all:	python MLGame.py -i model_DJ.py -f 100 -r arkanoid EASY 2
