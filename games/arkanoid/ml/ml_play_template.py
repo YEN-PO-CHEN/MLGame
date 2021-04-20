@@ -33,7 +33,7 @@ class MLPlay:
             mx = scene_info["ball"][0] - self.last_x  # mx > 0 RIGHT
             my = scene_info["ball"][1] - self.last_y  # my > 0 DOWN
             m = my / mx
-            if mx > 0 and my > 0:  # RIGHT_DOWN
+            if mx > 0 and my > 0 :  # RIGHT_DOWN
                 self.predict_Y = 400 - scene_info["ball"][1]
                 self.predict_X = scene_info["ball"][0] + self.predict_Y / m
                 self.predict_X = int(self.predict_X)
@@ -43,29 +43,13 @@ class MLPlay:
                 else:
                     self.predict_X = self.predict_X % 200
                 self.predict_X = self.predict_X + random.randint(-5, 5)
-                if scene_info["platform"][0] < (self.predict_X - 25) and my > 0:
+                if scene_info["platform"][0] < (self.predict_X - 20) and my > 0:
                     command = "MOVE_RIGHT"
-                elif scene_info["platform"][0] > (self.predict_X - 15) and my > 0:
+                elif scene_info["platform"][0] > (self.predict_X - 20) and my > 0:
                     command = "MOVE_LEFT"
                 else:
                     command = "NONE"
-            elif mx < 0 and my > 0:  # LEFT_DOWN
-                self.predict_Y = 400 - scene_info["ball"][1]
-                self.predict_X = scene_info["ball"][0] + self.predict_Y / m
-                self.predict_X = (-1)*self.predict_X
-                self.predict_X = int(self.predict_X)
-                xxx = self.predict_X // 200
-                if xxx % 2 == 1:
-                    self.predict_X = 200 - self.predict_X % 200
-                else:
-                    self.predict_X = self.predict_X % 200
-                self.predict_X = self.predict_X + random.randint(-5, 5)
-                if scene_info["platform"][0] < (self.predict_X - 25) and my > 0:
-                    command = "MOVE_RIGHT"
-                elif scene_info["platform"][0] > (self.predict_X - 15) and my > 0:
-                    command = "MOVE_LEFT"
-                else:
-                    command = "NONE"
+            c
             else:
                 command = "NONE"
                 ##     ## mx > 0 and my < 0:  # RIGHT_UP
