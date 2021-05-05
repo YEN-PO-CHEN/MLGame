@@ -64,10 +64,11 @@ for file_path in os.listdir(DataPath):
     numpy_data = np.array([Ball_x, Ball_y, Ball_speed_x, Ball_speed_y, Platform_1P, Platform_2P])
     X = np.transpose(numpy_data)
     y = Command
-
-    X_1P = np.concatenate((X_1P, X))
-    Y_1P = np.append(Y_1P, y)
-
+    if len(X) == len(y):
+        X_1P = np.concatenate((X_1P, X))
+        Y_1P = np.append(Y_1P, y)
+    else:
+        print(DataPath + "/" + file_path)
 
     # 提取特徵
     scene_info = data['ml_2P']['scene_info']
@@ -99,10 +100,12 @@ for file_path in os.listdir(DataPath):
     numpy_data = np.array([Ball_x, Ball_y, Ball_speed_x, Ball_speed_y, Platform_1P, Platform_2P])
     X = np.transpose(numpy_data)
     y = Command
-
-    X_2P = np.concatenate((X_2P, X))
-    Y_2P = np.append(Y_2P, y)
-
+    if len(X) == len(y):
+        X_2P = np.concatenate((X_2P, X))
+        Y_2P = np.append(Y_2P, y)
+    else:
+        a = a + 1
+        print(DataPath + "/" + file_path)
 X_1P = np.delete(X_1P, 0, axis=0)
 X_2P = np.delete(X_2P, 0, axis=0)
 print("BUG", a)
