@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9270a99e-09c6-4dda-84e6-f45429e5c8c0" name="Default Changelist" comment="Arkanoi">
-      <change afterPath="$PROJECT_DIR$/desktop.ini" afterDir="false" />
+    <list default="true" id="9270a99e-09c6-4dda-84e6-f45429e5c8c0" name="Default Changelist" comment="Pingpong Rule">
+      <change afterPath="$PROJECT_DIR$/games/pingpong/makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/games/pingpong/ml/ml_STU.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/games/pingpong/ml/ml_template_4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/games/pingpong/ml/rule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/games/pingpong/train/train.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/arkanoid/ml/ml_play_template.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/arkanoid/ml/ml_play_template.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/games/pingpong/ml/ml_play_template.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/pingpong/ml/ml_play_template.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +54,12 @@
   </component>
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS TUF Gaming\Desktop\MLGame-master" />
+      <recent name="C:\Users\ASUS TUF Gaming\Desktop\MLGame-master\games\pingpong" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="pickle" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -116,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618327139345</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Pingpong Rule">
+      <created>1618899683828</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1618899683828</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,7 +154,8 @@
     <MESSAGE value="add" />
     <MESSAGE value="K mean" />
     <MESSAGE value="Arkanoid" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arkanoid" />
+    <MESSAGE value="Pingpong Rule" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pingpong Rule" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
