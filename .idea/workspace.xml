@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9270a99e-09c6-4dda-84e6-f45429e5c8c0" name="Default Changelist" comment="Pingpong Rule">
-      <change afterPath="$PROJECT_DIR$/games/pingpong/makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/pingpong/ml/ml_STU.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/pingpong/ml/ml_template_4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/pingpong/ml/rule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/games/pingpong/train/train.py" afterDir="false" />
+    <list default="true" id="9270a99e-09c6-4dda-84e6-f45429e5c8c0" name="Default Changelist" comment="Pingpong Modify train">
+      <change beforePath="$PROJECT_DIR$/.idea/MLGame-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MLGame-master.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/pingpong/ml/ml_play_template.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/pingpong/ml/ml_play_template.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop.ini" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +32,12 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/games/pingpong/ml/rule.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/tokenize.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/games/pingpong/ml/ml_play_1P.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/makefile" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/games/pingpong/train/train.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/games/pingpong/ml/ml_play_template_5.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1pvBH1fFJT0jhy4D91EViVpfXyi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -50,6 +52,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="ReaderModeSettings">
@@ -133,7 +136,28 @@
       <option name="project" value="LOCAL" />
       <updated>1618899683828</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Pingpong Finish">
+      <created>1620231780595</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1620231780596</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Pingpong Finish">
+      <created>1620231799426</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1620231799426</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Pingpong Modify train">
+      <created>1620231925437</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1620231925437</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,7 +179,9 @@
     <MESSAGE value="K mean" />
     <MESSAGE value="Arkanoid" />
     <MESSAGE value="Pingpong Rule" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pingpong Rule" />
+    <MESSAGE value="Pingpong Finish" />
+    <MESSAGE value="Pingpong Modify train" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pingpong Modify train" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

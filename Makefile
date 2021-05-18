@@ -8,3 +8,7 @@ $.Test_PONG_RECORD:
 	python MLGame.py -f -r -i ml_play_template.py pingpong HARD 200
 $.Stu:
 	python MLGame.py -f 150 -r -i ml_STU.py pingpong HARD 100
+$.Test_snake:
+	python MLGame.py -i ml_play_template.py snake
+$.ML_snake:
+	python MLGame.py -i ml_play.py -i ml_play.py snake
